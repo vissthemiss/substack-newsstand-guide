@@ -25,11 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${libreBaskerville.variable} ${dmSans.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en">
+      <body
+        className={`${libreBaskerville.variable} ${dmSans.variable} site-body`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
