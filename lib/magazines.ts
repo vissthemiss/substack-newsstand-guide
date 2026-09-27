@@ -45,7 +45,7 @@ export function layoutForArticle(id: string): {
 
 export function assignCoverStyles(
   idsInOrder: string[],
-  available: Record<string, CoverStyle[]>,
+  available: Record<string, readonly CoverStyle[]>,
 ): Record<string, CoverStyle> {
   const assigned: Record<string, CoverStyle> = {};
   const recent: CoverStyle[] = [];
