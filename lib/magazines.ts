@@ -57,11 +57,10 @@ export function assignCoverStyles(
 
     if (
       recent.length >= 2 &&
-      recent.at(-1) === preferred &&
-      recent.at(-2) === preferred &&
-      chosen === preferred
+      recent.at(-1) === chosen &&
+      recent.at(-2) === chosen
     ) {
-      const alternative = options.find((style) => style !== preferred);
+      const alternative = options.find((style) => style !== chosen);
       if (alternative) {
         chosen = alternative;
       }

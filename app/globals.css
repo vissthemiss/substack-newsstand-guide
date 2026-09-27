@@ -416,4 +416,9 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+
+  .magazine:hover .magazine__paper,
+  .magazine:focus-visible .magazine__paper {
+    transform: none;
+  }
 }
