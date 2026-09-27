@@ -33,11 +33,13 @@ describe("layoutForArticle", () => {
     expect(second).toEqual(first);
   });
 
-  it("keeps widthWeight in 108–175 and leanDeg in −1.5…1.5", () => {
+  it("keeps dimensions and lean within their intended ranges", () => {
     for (let i = 0; i < 200; i++) {
       const layout = layoutForArticle(`post-${i}`);
       expect(layout.widthWeight).toBeGreaterThanOrEqual(108);
       expect(layout.widthWeight).toBeLessThanOrEqual(175);
+      expect(layout.heightScale).toBeGreaterThanOrEqual(0.9);
+      expect(layout.heightScale).toBeLessThanOrEqual(1.1);
       expect(layout.leanDeg).toBeGreaterThanOrEqual(-1.5);
       expect(layout.leanDeg).toBeLessThanOrEqual(1.5);
     }

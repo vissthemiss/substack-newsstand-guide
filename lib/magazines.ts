@@ -36,7 +36,7 @@ export function layoutForArticle(id: string): {
 
   const leanDeg = Math.round(((h % 31) / 10 - 1.5) * 10) / 10;
   const heightScale =
-    Math.round((0.92 + ((dims >>> 8) & 0xff) / 255) * 0.16 * 1000) / 1000;
+    Math.round((0.92 + (((dims >>> 8) & 0xff) / 255) * 0.16) * 1000) / 1000;
   const preferredStyle = STYLES[styleHash % STYLES.length]!;
   const aspect = ASPECTS[(styleHash >> 2) % ASPECTS.length]!;
 
