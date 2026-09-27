@@ -1,0 +1,25 @@
+:root {
+  --page: #ffffe8;
+  --header: #aacb73;
+  --accent: #cd2c58;
+  --text: #1a1a1a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--page);
+  color: var(--text);
+  font-family: var(--font-ui), sans-serif;
+}
