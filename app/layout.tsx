@@ -14,8 +14,14 @@ const dmSans = DM_Sans({
   variable: "--font-ui",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : publication.substackUrl);
+
 export const metadata: Metadata = {
-  metadataBase: new URL(publication.substackUrl),
+  metadataBase: new URL(siteUrl),
   title: publication.name,
   description: publication.description,
   openGraph: {
