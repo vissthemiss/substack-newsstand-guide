@@ -1,20 +1,77 @@
-# Build Your Own Substack Newsstand
+# uts: murmur. newsstand
 
-Turn your Substack archive into a magazine rack readers can browse.
+A magazine-rack interface for browsing the
+[uts: murmur.](https://pechat.substack.com/) archive. It is a Next.js app that
+syncs public Substack archive data, popularity order, and cover images into
+local snapshots so the site remains useful if Substack is temporarily
+unavailable.
 
-This is a reusable build brief based on [Le Index](https://le-index.vercel.app), the newsstand created for [Anna Noelle Rinke](https://annanoellerinke.substack.com/). It covers the finished design and the practical details needed to make your own: real article covers, varied magazine sizes, topic filters, popularity sorting, a reader suggestion form connected to Notion, and publishing.
+## Local runbook
 
-**[Read the complete build guide →](substack_newsstand_build_guide.md)**
+Requires Node.js 20 or newer.
 
-## How to use it
+```bash
+npm install
+npm run sync:snapshot
+npm run sync:popular
+npm run sync:covers
+npm run dev
+```
 
-1. Download `substack_newsstand_build_guide.md`, or copy its contents.
-2. Give it to your AI coding tool or developer with your Substack URL, logo, and any visual references.
-3. Fill in the short publication brief at the start of the guide.
-4. Have the builder show you a plan and preview, then connect your own Notion database and publish.
+Open [http://localhost:3000](http://localhost:3000). Before shipping a change,
+run:
 
-You do not need to write the code yourself. The guide tells the builder what to implement and what to verify. The newsstand itself does not need an AI API key.
+```bash
+npm test
+npm run build
+```
 
-This repository contains instructions, not an installable copy of Le Index. Use your own publication identity and artwork. No private database IDs, reader submissions, or credentials are included.
+## Refreshing the archive
 
-The idea of sharing a reusable build brief was inspired by [Carol's Virtual Library Build Guide](https://github.com/carollia99/virtual-library-guide/blob/main/virtual_library_build_guide.md). These instructions describe the separate Substack newsstand we built.
+When new posts appear on Substack, regenerate and commit the checked-in data
+and covers:
+
+```bash
+npm run sync:snapshot
+npm run sync:popular
+npm run sync:covers
+npm test
+npm run build
+```
+
+Run the commands in that order: the popularity and cover syncs use the current
+archive snapshot. Review the generated changes before committing them.
+
+## Configuration
+
+Set `NEXT_PUBLIC_SITE_URL` to the site's canonical absolute URL, for example
+`https://your-project.vercel.app`. It is used as the metadata base for social
+sharing links. On Vercel, deployments fall back automatically to
+`VERCEL_URL`; local builds fall back to the publication's Substack URL.
+
+The publication identity and Substack endpoints live in `lib/publication.ts`.
+This app uses public Substack data only. It does not use Notion, a reader
+submissions database, or an AI API key.
+
+## Deploying to Vercel
+
+Import the GitHub repository into Vercel and use the default Next.js build
+settings. Add `NEXT_PUBLIC_SITE_URL` after the production domain is known, then
+redeploy so canonical social metadata uses it. Vercel supplies a free
+`*.vercel.app` URL; a custom domain is optional.
+
+For a CLI deployment:
+
+```bash
+npx vercel --yes
+npx vercel --prod --yes
+```
+
+The first command links the project and creates a preview deployment. The
+second promotes a production deployment. Run `npx vercel login` first if the
+CLI requests authentication.
+
+## Reusable guide
+
+The original reusable brief remains available in
+[`substack_newsstand_build_guide.md`](substack_newsstand_build_guide.md).
