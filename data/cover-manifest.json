@@ -1,0 +1,72 @@
+[
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/not-a-baby-anymore.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-moldy-peaches.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/milk-before-bed.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-uninstagrammable-fire.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-hearts-untranslatable-words.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/29-years-of-borrowed-personalities.webp"
+  }
+]
