@@ -15,8 +15,15 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(publication.substackUrl),
   title: publication.name,
   description: publication.description,
+  openGraph: {
+    title: publication.name,
+    description: publication.description,
+    siteName: publication.name,
+    type: "website",
+  },
 };
 
 export default function RootLayout({
