@@ -107,15 +107,15 @@ describe("archive fallback", () => {
     expect(result.articles).toEqual(loadArchiveSnapshot());
   });
 
-  it("reports live even when the live archive is empty", async () => {
+  it("returns the snapshot when the live archive is empty", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(new Response(JSON.stringify([]))),
     );
 
     await expect(getArticles()).resolves.toEqual({
-      articles: [],
-      source: "live",
+      articles: loadArchiveSnapshot(),
+      source: "snapshot",
     });
   });
 });

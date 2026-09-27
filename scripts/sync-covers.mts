@@ -83,34 +83,32 @@ async function writeWebp(
 async function syncArticle(
   article: Article,
   index: number,
-  previousById: Map<string, CoverManifestEntry>,
-): Promise<CoverManifestEntry | null> {
-  if (!article.postId) return null;
-
-  const outputPath = join(coversDirectory, `${article.id}.webp`);
-  const publicPath = `/assets/covers/${article.id}.webp`;
-  const previous = previousById.get(article.id);
-
-  if (previous && (await fileExists(outputPath))) {
-    console.log(`skip ${article.id} (already cached)`);
-    return { ...previous, path: publicPath };
-  }
+  previousByVariant: Map<string, CoverManifestEntry>,
+): Promise<CoverManifestEntry[]> {
+  if (!article.postId) return [];
 
   const candidates: Array<{
     sourceUrl: string;
     style: CoverManifestEntry["style"];
     aspect: CoverManifestEntry["aspect"];
   }> = pressKitCandidates(article.postId, index);
-
-  if (article.coverImage) {
-    candidates.push({
-      sourceUrl: article.coverImage,
-      style: "fallback",
-      aspect: "original",
-    });
-  }
+  const entries: CoverManifestEntry[] = [];
 
   for (const candidate of candidates) {
+    const filename = `${article.id}-${candidate.style}-${candidate.aspect}.webp`;
+    const outputPath = join(coversDirectory, filename);
+    const publicPath = `/assets/covers/${filename}`;
+    const variantKey = `${article.id}:${candidate.style}:${candidate.aspect}`;
+    const previous = previousByVariant.get(variantKey);
+
+    if (previous && (await fileExists(outputPath))) {
+      console.log(
+        `skip ${article.id} (${candidate.style}/${candidate.aspect}, cached)`,
+      );
+      entries.push({ ...previous, path: publicPath });
+      continue;
+    }
+
     try {
       const dimensions = await writeWebp(
         await download(candidate.sourceUrl),
@@ -120,7 +118,7 @@ async function syncArticle(
         `saved ${article.id} (${candidate.style}/${candidate.aspect}, ` +
           `${dimensions.width}x${dimensions.height})`,
       );
-      return {
+      entries.push({
         id: article.id,
         postId: article.postId,
         sourceUrl: candidate.sourceUrl,
@@ -128,15 +126,53 @@ async function syncArticle(
         aspect: candidate.aspect,
         ...dimensions,
         path: publicPath,
-      };
+      });
     } catch (error) {
       const reason = error instanceof Error ? error.message : String(error);
       console.warn(`failed ${article.id} from ${candidate.sourceUrl}: ${reason}`);
     }
   }
 
-  console.warn(`missing cover for ${article.id}`);
-  return null;
+  if (entries.length === 0 && article.coverImage) {
+    const filename = `${article.id}-fallback-original.webp`;
+    const outputPath = join(coversDirectory, filename);
+    const publicPath = `/assets/covers/${filename}`;
+    const variantKey = `${article.id}:fallback:original`;
+    const previous = previousByVariant.get(variantKey);
+
+    if (previous && (await fileExists(outputPath))) {
+      console.log(`skip ${article.id} (fallback/original, cached)`);
+      entries.push({ ...previous, path: publicPath });
+    } else {
+      try {
+        const dimensions = await writeWebp(
+          await download(article.coverImage),
+          outputPath,
+        );
+        entries.push({
+          id: article.id,
+          postId: article.postId,
+          sourceUrl: article.coverImage,
+          style: "fallback",
+          aspect: "original",
+          ...dimensions,
+          path: publicPath,
+        });
+        console.log(
+          `saved ${article.id} (fallback/original, ` +
+            `${dimensions.width}x${dimensions.height})`,
+        );
+      } catch (error) {
+        const reason = error instanceof Error ? error.message : String(error);
+        console.warn(`failed ${article.id} fallback: ${reason}`);
+      }
+    }
+  }
+
+  if (entries.length === 0) {
+    console.warn(`missing cover for ${article.id}`);
+  }
+  return entries;
 }
 
 const snapshot = JSON.parse(
@@ -144,9 +180,15 @@ const snapshot = JSON.parse(
 ) as ArchiveSnapshot;
 const articles = snapshot.articles.filter((article) => article.postId);
 const previous = await readExistingManifest();
-const previousById = new Map(previous.map((entry) => [entry.id, entry]));
-const manifest: Array<CoverManifestEntry | null> = Array(articles.length).fill(
-  null,
+const previousByVariant = new Map(
+  previous.map((entry) => [
+    `${entry.id}:${entry.style}:${entry.aspect}`,
+    entry,
+  ]),
+);
+const manifest: CoverManifestEntry[][] = Array.from(
+  { length: articles.length },
+  () => [],
 );
 let cursor = 0;
 
@@ -158,7 +200,7 @@ async function worker() {
     manifest[index] = await syncArticle(
       articles[index],
       index,
-      previousById,
+      previousByVariant,
     );
   }
 }
@@ -167,9 +209,7 @@ await Promise.all(
   Array.from({ length: Math.min(CONCURRENCY, articles.length) }, () => worker()),
 );
 
-const entries = manifest.filter(
-  (entry): entry is CoverManifestEntry => entry !== null,
-);
+const entries = manifest.flat();
 const temporaryManifestPath = `${manifestPath}.tmp`;
 await mkdir(dirname(manifestPath), { recursive: true });
 await writeFile(
@@ -180,5 +220,6 @@ await writeFile(
 await rename(temporaryManifestPath, manifestPath);
 
 console.log(
-  `Wrote ${entries.length}/${articles.length} covers to ${manifestPath}`,
+  `Wrote ${entries.length} cover variants for ${articles.length} articles ` +
+    `to ${manifestPath}`,
 );

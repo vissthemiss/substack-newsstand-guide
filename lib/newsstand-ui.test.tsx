@@ -78,8 +78,9 @@ describe("newsstand UI", () => {
           subtitle: "A closer look",
           isPaid: true,
           tags: ["Music", "Culture"],
-          coverImage: "/cover.webp",
+          coverImage: "https://example.com/remote-cover.jpg",
         }}
+        coverSrc="/assets/covers/local-cover.webp"
         onClose={() => {}}
         triggerRef={createRef<HTMLButtonElement>()}
       />,
@@ -93,6 +94,8 @@ describe("newsstand UI", () => {
     expect(html).toContain('href="https://example.com/new"');
     expect(html).toContain('rel="noopener noreferrer"');
     expect(html).toContain(">Read on Substack<");
+    expect(html).toContain('src="/assets/covers/local-cover.webp"');
+    expect(html).not.toContain("remote-cover.jpg");
     expect(html).not.toContain("annna zlogoni");
   });
 

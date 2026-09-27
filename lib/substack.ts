@@ -72,8 +72,16 @@ export async function getArticles(): Promise<{
   source: "live" | "snapshot" | "empty";
 }> {
   try {
+    const articles = await fetchCompleteArchive("new");
+    if (articles.length === 0) {
+      const snapshot = loadArchiveSnapshot();
+      if (snapshot.length > 0) {
+        return { articles: snapshot, source: "snapshot" };
+      }
+    }
+
     return {
-      articles: await fetchCompleteArchive("new"),
+      articles,
       source: "live",
     };
   } catch {

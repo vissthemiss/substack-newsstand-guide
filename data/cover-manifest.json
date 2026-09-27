@@ -7,7 +7,57 @@
     "aspect": "grid",
     "width": 720,
     "height": 900,
-    "path": "/assets/covers/not-a-baby-anymore.webp"
+    "path": "/assets/covers/not-a-baby-anymore-overlay-grid.webp"
+  },
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/not-a-baby-anymore-overlay-stories.webp"
+  },
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/not-a-baby-anymore-split-grid.webp"
+  },
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/not-a-baby-anymore-split-stories.webp"
+  },
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/not-a-baby-anymore-title-grid.webp"
+  },
+  {
+    "id": "not-a-baby-anymore",
+    "postId": "201422214",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/201422214/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/not-a-baby-anymore-title-stories.webp"
   },
   {
     "id": "the-moldy-peaches",
@@ -17,7 +67,57 @@
     "aspect": "stories",
     "width": 720,
     "height": 1280,
-    "path": "/assets/covers/the-moldy-peaches.webp"
+    "path": "/assets/covers/the-moldy-peaches-overlay-stories.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-moldy-peaches-split-grid.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-moldy-peaches-split-stories.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-moldy-peaches-title-grid.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-moldy-peaches-title-stories.webp"
+  },
+  {
+    "id": "the-moldy-peaches",
+    "postId": "200835436",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200835436/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-moldy-peaches-overlay-grid.webp"
   },
   {
     "id": "milk-before-bed",
@@ -27,7 +127,57 @@
     "aspect": "grid",
     "width": 720,
     "height": 900,
-    "path": "/assets/covers/milk-before-bed.webp"
+    "path": "/assets/covers/milk-before-bed-split-grid.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/milk-before-bed-split-stories.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/milk-before-bed-title-grid.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/milk-before-bed-title-stories.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/milk-before-bed-overlay-grid.webp"
+  },
+  {
+    "id": "milk-before-bed",
+    "postId": "200366338",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/200366338/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/milk-before-bed-overlay-stories.webp"
   },
   {
     "id": "january-mixtape-in-may-boredom-hate",
@@ -37,7 +187,57 @@
     "aspect": "stories",
     "width": 720,
     "height": 1280,
-    "path": "/assets/covers/january-mixtape-in-may-boredom-hate.webp"
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-split-stories.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-title-grid.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-title-stories.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-overlay-grid.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-overlay-stories.webp"
+  },
+  {
+    "id": "january-mixtape-in-may-boredom-hate",
+    "postId": "197359510",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/197359510/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/january-mixtape-in-may-boredom-hate-split-grid.webp"
   },
   {
     "id": "the-uninstagrammable-fire",
@@ -47,7 +247,57 @@
     "aspect": "grid",
     "width": 720,
     "height": 900,
-    "path": "/assets/covers/the-uninstagrammable-fire.webp"
+    "path": "/assets/covers/the-uninstagrammable-fire-title-grid.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-uninstagrammable-fire-title-stories.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-uninstagrammable-fire-overlay-grid.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-uninstagrammable-fire-overlay-stories.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-uninstagrammable-fire-split-grid.webp"
+  },
+  {
+    "id": "the-uninstagrammable-fire",
+    "postId": "188388748",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/188388748/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-uninstagrammable-fire-split-stories.webp"
   },
   {
     "id": "the-hearts-untranslatable-words",
@@ -57,7 +307,57 @@
     "aspect": "stories",
     "width": 720,
     "height": 1280,
-    "path": "/assets/covers/the-hearts-untranslatable-words.webp"
+    "path": "/assets/covers/the-hearts-untranslatable-words-title-stories.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/overlay/composed?aspectRatio=grid",
+    "style": "overlay",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-hearts-untranslatable-words-overlay-grid.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-hearts-untranslatable-words-overlay-stories.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-hearts-untranslatable-words-split-grid.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/the-hearts-untranslatable-words-split-stories.webp"
+  },
+  {
+    "id": "the-hearts-untranslatable-words",
+    "postId": "187975351",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/187975351/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/the-hearts-untranslatable-words-title-grid.webp"
   },
   {
     "id": "29-years-of-borrowed-personalities",
@@ -67,6 +367,56 @@
     "aspect": "grid",
     "width": 720,
     "height": 900,
-    "path": "/assets/covers/29-years-of-borrowed-personalities.webp"
+    "path": "/assets/covers/29-years-of-borrowed-personalities-overlay-grid.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/overlay/composed?aspectRatio=stories",
+    "style": "overlay",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/29-years-of-borrowed-personalities-overlay-stories.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/split/composed?aspectRatio=grid",
+    "style": "split",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/29-years-of-borrowed-personalities-split-grid.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/split/composed?aspectRatio=stories",
+    "style": "split",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/29-years-of-borrowed-personalities-split-stories.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/title/composed?aspectRatio=grid",
+    "style": "title",
+    "aspect": "grid",
+    "width": 720,
+    "height": 900,
+    "path": "/assets/covers/29-years-of-borrowed-personalities-title-grid.webp"
+  },
+  {
+    "id": "29-years-of-borrowed-personalities",
+    "postId": "185016229",
+    "sourceUrl": "https://pechat.substack.com/api/v1/press_kit/asset/185016229/title/composed?aspectRatio=stories",
+    "style": "title",
+    "aspect": "stories",
+    "width": 720,
+    "height": 1280,
+    "path": "/assets/covers/29-years-of-borrowed-personalities-title-stories.webp"
   }
 ]

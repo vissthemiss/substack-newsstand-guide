@@ -5,6 +5,7 @@ import type { Article } from "@/lib/types";
 
 type ArticlePreviewDialogProps = {
   article: Article | null;
+  coverSrc: string | null;
   onClose: () => void;
   triggerRef: RefObject<HTMLButtonElement | null>;
 };
@@ -17,6 +18,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
 
 export function ArticlePreviewDialog({
   article,
+  coverSrc,
   onClose,
   triggerRef,
 }: ArticlePreviewDialogProps) {
@@ -57,7 +59,7 @@ export function ArticlePreviewDialog({
     >
       <article
         className={`article-preview__content${
-          article.coverImage ? "" : " article-preview__content--text-only"
+          coverSrc ? "" : " article-preview__content--text-only"
         }`}
       >
         <button
@@ -70,12 +72,8 @@ export function ArticlePreviewDialog({
           <span aria-hidden="true">×</span>
         </button>
 
-        {article.coverImage ? (
-          <img
-            className="article-preview__cover"
-            src={article.coverImage}
-            alt=""
-          />
+        {coverSrc ? (
+          <img className="article-preview__cover" src={coverSrc} alt="" />
         ) : null}
 
         <div className="article-preview__body">

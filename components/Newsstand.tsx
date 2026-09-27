@@ -3,7 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArticlePreviewDialog } from "@/components/ArticlePreviewDialog";
 import { ShelfRow } from "@/components/ShelfRow";
-import type { CoverManifestEntry } from "@/lib/covers";
+import {
+  resolveCover,
+  type CoverManifestEntry,
+} from "@/lib/covers";
 import {
   collectTopics,
   filterArticles,
@@ -112,6 +115,16 @@ export function Newsstand({
     setSelectedArticle(article);
     onSelect(article);
   };
+  const selectedCover = selectedArticle
+    ? resolveCover(selectedArticle, [
+        ...coverManifest.filter(
+          (entry) =>
+            entry.id === selectedArticle.id &&
+            entry.style === coverStyles[selectedArticle.id],
+        ),
+        ...coverManifest,
+      ])
+    : null;
 
   return (
     <section className="newsstand" aria-labelledby="newsstand-heading">
@@ -170,6 +183,7 @@ export function Newsstand({
 
       <ArticlePreviewDialog
         article={selectedArticle}
+        coverSrc={selectedCover}
         onClose={() => setSelectedArticle(null)}
         triggerRef={dialogTriggerRef}
       />
