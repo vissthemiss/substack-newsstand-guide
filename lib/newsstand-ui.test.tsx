@@ -1,5 +1,7 @@
+import { createRef } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { ArticlePreviewDialog } from "@/components/ArticlePreviewDialog";
 import { Magazine } from "@/components/Magazine";
 import { Newsstand, rackCapacity } from "@/components/Newsstand";
 import { ShelfRow } from "@/components/ShelfRow";
@@ -66,6 +68,32 @@ describe("newsstand UI", () => {
     expect(html).toContain(">General<");
     expect(html).toContain(">Newest<");
     expect(html).toContain(">Top reads<");
+  });
+
+  it("renders article preview details without repeating the author", () => {
+    const html = renderToStaticMarkup(
+      <ArticlePreviewDialog
+        article={{
+          ...articles[0]!,
+          subtitle: "A closer look",
+          isPaid: true,
+          tags: ["Music", "Culture"],
+          coverImage: "/cover.webp",
+        }}
+        onClose={() => {}}
+        triggerRef={createRef<HTMLButtonElement>()}
+      />,
+    );
+
+    expect(html).toContain("<dialog");
+    expect(html).toContain("New Story");
+    expect(html).toContain("A closer look");
+    expect(html).toContain("Music");
+    expect(html).toContain("Paid");
+    expect(html).toContain('href="https://example.com/new"');
+    expect(html).toContain('rel="noopener noreferrer"');
+    expect(html).toContain(">Read on Substack<");
+    expect(html).not.toContain("annna zlogoni");
   });
 
   it("keeps repeated cover styles to two across shelf boundaries", () => {

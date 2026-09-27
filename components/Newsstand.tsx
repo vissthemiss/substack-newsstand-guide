@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ArticlePreviewDialog } from "@/components/ArticlePreviewDialog";
 import { ShelfRow } from "@/components/ShelfRow";
 import type { CoverManifestEntry } from "@/lib/covers";
 import {
@@ -47,9 +48,11 @@ export function Newsstand({
   onSelect = () => undefined,
 }: NewsstandProps) {
   const rackRef = useRef<HTMLDivElement>(null);
+  const dialogTriggerRef = useRef<HTMLButtonElement>(null);
   const [topic, setTopic] = useState<Topic>("All");
   const [sortMode, setSortMode] = useState<SortMode>("new");
   const [capacity, setCapacity] = useState(8);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   useEffect(() => {
     const rack = rackRef.current;
@@ -102,6 +105,13 @@ export function Newsstand({
     () => chunkArticles(visible, capacity),
     [capacity, visible],
   );
+  const handleSelect = (article: Article) => {
+    if (document.activeElement instanceof HTMLButtonElement) {
+      dialogTriggerRef.current = document.activeElement;
+    }
+    setSelectedArticle(article);
+    onSelect(article);
+  };
 
   return (
     <section className="newsstand" aria-labelledby="newsstand-heading">
@@ -150,13 +160,19 @@ export function Newsstand({
               coverManifest={coverManifest}
               coverStyles={coverStyles}
               rowIndex={index}
-              onSelect={onSelect}
+              onSelect={handleSelect}
             />
           ))
         ) : (
           <p className="newsstand__empty">No stories on this shelf yet.</p>
         )}
       </div>
+
+      <ArticlePreviewDialog
+        article={selectedArticle}
+        onClose={() => setSelectedArticle(null)}
+        triggerRef={dialogTriggerRef}
+      />
     </section>
   );
 }
